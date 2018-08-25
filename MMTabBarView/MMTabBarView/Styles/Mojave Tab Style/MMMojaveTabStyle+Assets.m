@@ -202,8 +202,8 @@
                      @(MMMtabUnselectedHover)     : [NSColor colorWithSRGBRed:0.110 green:0.110 blue:0.110 alpha:1.0],
 
                      @(MMMtabSelectedFont)        : [NSColor textColor],
-                     @(MMMtabUnselectedFont)      : [NSColor selectedTextBackgroundColor],
-                     @(MMMtabUnselectedHoverFont) : [NSColor selectedTextBackgroundColor],
+                     @(MMMtabUnselectedFont)      : [NSColor secondaryLabelColor],
+                     @(MMMtabUnselectedHoverFont) : [NSColor secondaryLabelColor],
                      
                      @(MMMtabBarBackground)   : [NSColor colorWithSRGBRed:0.112 green:0.112 blue:0.112 alpha:1.0],
 
@@ -258,9 +258,9 @@
                      @(MMMtabUnselectedHover)     : [NSColor colorWithSRGBRed:0.110 green:0.110 blue:0.110 alpha:1.0],
 
                      @(MMMtabSelectedFont)        : [NSColor textColor],
-                     @(MMMtabUnselectedFont)      : [NSColor selectedTextBackgroundColor],
-                     @(MMMtabUnselectedHoverFont) : [NSColor selectedTextBackgroundColor],
-                     
+                     @(MMMtabUnselectedFont)      : [NSColor secondaryLabelColor],
+                     @(MMMtabUnselectedHoverFont) : [NSColor secondaryLabelColor],
+
 					 @(MMMtabBarBackground)   : [NSColor colorWithSRGBRed:0.112 green:0.112 blue:0.112 alpha:1.0],
 
                      @(MMMaddButtonImage)                   : [self addTabImageWithIconColor:[NSColor colorWithSRGBRed:0.520 green:0.520 blue:0.520 alpha:1.0]],

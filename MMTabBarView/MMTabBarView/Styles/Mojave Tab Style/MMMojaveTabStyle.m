@@ -152,15 +152,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (NSAttributedString *)attributedStringValueForTabCell:(MMTabBarButtonCell *)cell
- {
-	NSMutableAttributedString *attrStr;
-	NSString *contents = [cell title];
-	attrStr = [[NSMutableAttributedString alloc] initWithString:contents];
+{
+    NSString *contents = [cell title];
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:contents];
 	NSColor *textColor = nil;
 	NSRange range = NSMakeRange(0, [contents length]);
 
 	 // Figure out correct text color
-    
     if ( [[cell controlView] state] == NSOnState )
     {
         textColor = [self colorForPart:MMMtabSelectedFont ofTabBarView:[cell tabBarView]];
@@ -177,6 +175,12 @@ NS_ASSUME_NONNULL_BEGIN
 	// Add font attribute
 	[attrStr addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:11.0] range:range];
 	[attrStr addAttribute:NSForegroundColorAttributeName value:textColor range:range];
+
+    // Remove the default shadow shown by control
+    NSShadow* shadow = [[NSShadow alloc] init];
+    [shadow setShadowColor:[NSColor colorWithCalibratedWhite:1.0 alpha:0.0]];
+    [attrStr addAttribute:NSShadowAttributeName value:shadow range:range];
+
 
 	// Paragraph Style for Truncating Long Text
 	static NSMutableParagraphStyle *TruncatingTailParagraphStyle = nil;
